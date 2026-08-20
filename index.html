@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Kizambo Kachila — Strategic Planning, M&amp;E &amp; Data Analytics Leader</title>
+<meta name="description" content="Portfolio of Eric Kizambo Kachila: M&amp;E system design, impact evaluation design, and data analytics work in donor-financed infrastructure and development programmes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181C;
+    --paper:#EEF1EF;
+    --paper-2:#E3E8E4;
+    --card:#F8F9F7;
+    --basalt:#1C2226;
+    --basalt-2:#262E33;
+    --ember:#B5541F;
+    --ember-tint:#F1DDCC;
+    --teal:#2C6763;
+    --teal-tint:#D3E4E1;
+    --signal:#3F5E78;
+    --signal-tint:#D9E2E9;
+    --gold:#9C7A34;
+    --gold-tint:#EDE1C4;
+    --slate:#5B6570;
+    --line:#D3D9D4;
+    --line-dark:#3A434A;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:2px solid var(--ember);outline-offset:3px;}
+
+  /* ---- Header ---- */
+  .site-header{padding:22px 0;border-bottom:1px solid var(--line);}
+  .site-header .wrap{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;text-decoration:none;}
+  nav{display:flex;gap:26px;}
+  nav a{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.05em;
+    text-transform:uppercase;text-decoration:none;color:var(--slate);
+  }
+  nav a:hover{color:var(--ember);}
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 40px;}
+  .hero-grid{display:grid;grid-template-columns:1.25fr 0.85fr;gap:56px;align-items:center;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.09em;
+    color:var(--ember);font-weight:600;margin-bottom:18px;text-transform:uppercase;
+  }
+  h1{font-size:42px;font-weight:700;line-height:1.12;max-width:15ch;}
+  .subhead{margin-top:20px;font-size:17.5px;color:#333A3F;max-width:52ch;line-height:1.6;}
+  .contact-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;padding:7px 13px;
+    border:1px solid var(--line);border-radius:20px;color:var(--ink);
+    background:var(--card);text-decoration:none;
+  }
+  .chip.strong{border-color:var(--ember);color:var(--ember);}
+  .chip:hover{border-color:var(--ink);}
+
+  .photo-frame{
+    border:1px solid var(--line);background:var(--card);padding:10px;border-radius:var(--radius);
+  }
+  .photo-crop{
+    aspect-ratio:4/5;overflow:hidden;border-radius:1px;
+  }
+  .photo-crop img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;}
+
+  /* ---- Credentials strip ---- */
+  .cred-strip{
+    margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card);
+  }
+  .cred{padding:22px 20px;border-right:1px solid var(--line);}
+  .cred:last-child{border-right:none;}
+  .cred-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    color:var(--slate);text-transform:uppercase;
+  }
+  .cred-value{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin-top:6px;}
+  .cred-sub{font-size:12px;color:var(--teal);margin-top:4px;font-family:'IBM Plex Mono',monospace;}
+
+  /* ---- Section shell ---- */
+  section{padding:60px 0;}
+  .section-head{max-width:64ch;margin-bottom:32px;}
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    color:var(--teal);text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:28px;font-weight:700;}
+  .section-sub{margin-top:12px;color:#3A4147;font-size:16px;line-height:1.6;}
+
+  /* ---- About ---- */
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+  .about-grid p{font-size:16.5px;color:#262C30;margin:0 0 16px;}
+  .about-grid p:last-child{margin-bottom:0;}
+  .cv-link{
+    display:inline-block;margin-top:6px;font-family:'IBM Plex Mono',monospace;
+    font-size:13px;color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal-tint);
+  }
+  .tag-block{border-top:1px solid var(--line);padding-top:18px;}
+  .tag-block-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    color:var(--slate);text-transform:uppercase;margin-bottom:12px;
+  }
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag-row:last-child{margin-bottom:0;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;padding:5px 10px;
+    background:var(--paper-2);border-radius:2px;color:#2E3438;
+  }
+
+  /* ---- Portfolio index cards ---- */
+  .doc-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .doc-card{
+    border:1px solid var(--line);background:var(--card);border-radius:var(--radius);
+    padding:28px 26px;display:flex;flex-direction:column;gap:14px;
+    text-decoration:none;color:var(--ink);border-top:3px solid var(--ember);
+    transition:border-color .15s ease;
+  }
+  .doc-card.alt{border-top-color:var(--teal);}
+  .doc-card:hover{border-color:var(--ink);}
+  .doc-eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;
+    color:var(--ember);text-transform:uppercase;
+  }
+  .doc-card.alt .doc-eyebrow{color:var(--teal);}
+  .doc-card h3{font-size:20px;line-height:1.25;}
+  .doc-card p{font-size:14.5px;color:#3A4147;margin:0;line-height:1.6;}
+  .doc-facts{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--slate);
+    border-top:1px solid var(--line);padding-top:12px;letter-spacing:.02em;
+  }
+  .doc-cta{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;
+    margin-top:auto;padding-top:4px;
+  }
+  .doc-card.alt .doc-cta{color:var(--teal);}
+  .doc-card:not(.alt) .doc-cta{color:var(--ember);}
+
+  /* ---- Dashboard ---- */
+  .tableau-frame{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:14px;}
+  .tableau-frame iframe{width:100%;height:740px;border:1px solid var(--line);display:block;}
+  .dash-note{
+    margin-top:14px;font-size:13.5px;color:var(--slate);max-width:70ch;line-height:1.55;
+  }
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--slate);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+  @media (max-width:860px){
+    .wrap{padding:0 20px;}
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .hero-grid .photo-frame{max-width:280px;}
+    h1{font-size:32px;max-width:none;}
+    .cred-strip{grid-template-columns:repeat(2,1fr);}
+    .cred:nth-child(2){border-right:none;}
+    .cred{border-bottom:1px solid var(--line);}
+    .about-grid{grid-template-columns:1fr;gap:28px;}
+    .doc-cards{grid-template-columns:1fr;}
+    .tableau-frame iframe{height:520px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Eric Kizambo Kachila</a>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Nairobi, Kenya · Senior M&amp;E Professional</div>
+      <h1>Strategic Planning, M&amp;E &amp; Data Analytics Leader</h1>
+      <p class="subhead">I head corporate performance measurement at Kenya's state geothermal utility, where I designed the M&amp;E system for a KfW and GRMF financed 100MW steam field from the ground up. This site holds two portfolio pieces built to that same standard, an M&amp;E system design and a full impact evaluation design, plus the tools behind them.</p>
+      <div class="contact-row">
+        <span class="chip strong">Nairobi, Kenya</span>
+        <a class="chip" href="mailto:kizambocrick@gmail.com">kizambocrick@gmail.com</a>
+        <a class="chip" href="https://www.linkedin.com/in/kizambo-kachila" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="chip" href="https://github.com/erickizambo" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="photo-frame">
+      <div class="photo-crop">
+        <img src="assets/headshot.jpg" alt="Portrait of Eric Kizambo Kachila">
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="cred-strip">
+      <div class="cred">
+        <div class="cred-label">Experience</div>
+        <div class="cred-value">15+ yrs</div>
+        <div class="cred-sub">Donor-financed M&amp;E</div>
+      </div>
+      <div class="cred">
+        <div class="cred-label">MSc Statistics</div>
+        <div class="cred-value">2025</div>
+        <div class="cred-sub">Kenyatta University</div>
+      </div>
+      <div class="cred">
+        <div class="cred-label">ITCILO</div>
+        <div class="cred-value">Impact Eval.</div>
+        <div class="cred-sub">Completed June 2026</div>
+      </div>
+      <div class="cred">
+        <div class="cred-label">ITCILO</div>
+        <div class="cred-value">M&amp;E Certification</div>
+        <div class="cred-sub">Monitoring &amp; Evaluation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">About</div>
+      <h2>Fifteen years of designing systems that measure what donors and management need to know</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm Senior Statistician and functional Head of the Corporate Performance Section at the Geothermal Development Company (GDC), a Kenyan state corporation under the Ministry of Energy. I've been with GDC since 2010 and in this role since 2015, running the organisation's monitoring and evaluation framework against its strategic plan using a Balanced Scorecard cascade, and monitoring three flagship geothermal projects: Menengai, Baringo-Silali, and Suswa.</p>
+        <p>My donor portfolio spans AFD, KfW, EIB, AfDB, USAID, JICA and GRMF financed programmes. For the Baringo-Silali project's Paka component, I designed the full M&amp;E system from scratch, results framework, indicator matrix, data collection tools, data flow protocols, reporting templates and QA procedures, which is the first piece in the portfolio below. I work daily in Python, R, Stata, Power BI, Tableau, DHIS2, Kobo Toolbox and SQL, and I'm a native Kiswahili speaker, fluent in English.</p>
+        <a class="cv-link" href="https://www.linkedin.com/in/kizambo-kachila" target="_blank" rel="noopener">Full career history is on LinkedIn →</a>
+      </div>
+      <div>
+        <div class="tag-block">
+          <div class="tag-block-label">Donor &amp; financing exposure</div>
+          <div class="tag-row">
+            <span class="tag">AFD</span><span class="tag">KfW</span><span class="tag">EIB</span>
+            <span class="tag">AfDB</span><span class="tag">USAID</span><span class="tag">JICA</span><span class="tag">GRMF</span>
+          </div>
+          <div class="tag-block-label">Technical toolkit</div>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">R</span><span class="tag">Stata</span><span class="tag">SPSS</span>
+            <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">DHIS2</span>
+            <span class="tag">Kobo Toolbox</span><span class="tag">ODK</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Portfolio</div>
+      <h2>Two design documents</h2>
+      <p class="section-sub">Both are illustrative portfolio pieces built around a real project geography, not client deliverables. Each states plainly, on the page, where real data ends and simulated figures begin.</p>
+    </div>
+    <div class="doc-cards">
+      <a class="doc-card" href="me-system.html">
+        <div class="doc-eyebrow">Portfolio Document 01</div>
+        <h3>M&amp;E System Design — Paka-Baringo Silali</h3>
+        <p>The results system I designed for a 100MW geothermal steam field: a Theory of Change across four pathways, a 19-indicator results framework, four data collection tools, and a working monitoring dashboard.</p>
+        <div class="doc-facts">19 INDICATORS · 4 TOOLS · KFW &amp; GRMF FINANCED</div>
+        <div class="doc-cta">Open the design →</div>
+      </a>
+      <a class="doc-card alt" href="impact-evaluation.html">
+        <div class="doc-eyebrow">Portfolio Document 02</div>
+        <h3>Impact Evaluation Design — BSCHAP</h3>
+        <p>A quasi-experimental design for a CSR-funded health programme where randomising access was never ethically viable. Five identification strategies assessed, one recommended, built with a full mixed-methods strand.</p>
+        <div class="doc-facts">PSM-DiD · MIXED METHODS · 38-MONTH DESIGN</div>
+        <div class="doc-cta">Open the design →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard" id="dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Dashboard</div>
+      <h2>Tableau, applied</h2>
+      <p class="section-sub">The dashboard below demonstrates Tableau proficiency using an HR analytics build, not M&amp;E-specific data. I'm developing an indicator-tracking dashboard from my own project data to replace it here.</p>
+    </div>
+    <div class="tableau-frame">
+      <iframe src="https://public.tableau.com/views/HRDashboard_17022178056540/HRAnalyticsDashboard?:showVizHome=no&:embed=true" loading="lazy" title="HR Analytics Dashboard, Tableau proficiency sample"></iframe>
+    </div>
+    <p class="dash-note">Built and published on Tableau Public. Full workbook: <a href="https://public.tableau.com/app/profile/eric.kizambo.kachila/vizzes" target="_blank" rel="noopener">public.tableau.com/app/profile/eric.kizambo.kachila</a></p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span>Eric Kizambo Kachila · Nairobi, Kenya</span>
+    <span>
+      <a href="mailto:kizambocrick@gmail.com">kizambocrick@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/kizambo-kachila" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/erickizambo" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
