@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reporting System Behind a 25-Department Corporate Workplan | Eric Kizambo Kachila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181C;
+    --paper:#EEF1EF;
+    --paper-2:#E3E8E4;
+    --card:#F8F9F7;
+    --basalt:#1C2226;
+    --basalt-2:#262E33;
+    --ember:#B5541F;
+    --ember-tint:#F1DDCC;
+    --teal:#2C6763;
+    --teal-tint:#D3E4E1;
+    --signal:#3F5E78;
+    --signal-tint:#D9E2E9;
+    --gold:#9C7A34;
+    --gold-tint:#EDE1C4;
+    --slate:#5B6570;
+    --line:#D3D9D4;
+    --line-dark:#3A434A;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+  /* ---- Disclaimer ribbon ---- */
+  .ribbon{
+    background:var(--basalt);color:#D8DCD9;font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;letter-spacing:.02em;padding:9px 32px;text-align:center;
+  }
+  .ribbon b{color:#E9CE8F;font-weight:600;}
+
+  /* ---- Header ---- */
+  .site-header{padding:22px 0;border-bottom:1px solid var(--line);}
+  .site-header .wrap{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;text-decoration:none;}
+  .doc-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--slate);letter-spacing:.03em;}
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 44px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.09em;
+    color:var(--gold);font-weight:600;margin-bottom:18px;
+  }
+  h1{font-size:42px;font-weight:700;line-height:1.1;max-width:21ch;}
+  .subhead{margin-top:20px;font-size:18px;color:#333A3F;max-width:62ch;line-height:1.55;}
+  .financing-row{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    padding:6px 12px;border:1px solid var(--line);border-radius:20px;
+    color:var(--ink);background:var(--card);
+  }
+  .chip.strong{border-color:var(--gold);color:var(--gold);}
+
+  /* ---- KPI strip ---- */
+  .kpi-strip{
+    margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;background:var(--card);
+  }
+  .kpi{padding:22px 20px;border-right:1px solid var(--line);}
+  .kpi:last-child{border-right:none;}
+  .kpi-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.06em;color:var(--slate);text-transform:uppercase;
+  }
+  .kpi-value{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-top:6px;}
+  .kpi-status{font-size:12px;color:var(--gold);margin-top:4px;font-family:'IBM Plex Mono',monospace;}
+  .dataset-note{margin-top:14px;font-size:12.5px;color:var(--slate);font-family:'IBM Plex Mono',monospace;}
+
+  /* ---- Section shell ---- */
+  section{padding:56px 0;}
+  .section-head{max-width:66ch;margin-bottom:32px;}
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:28px;font-weight:700;}
+  .section-sub{margin-top:12px;color:#3A4147;font-size:16px;line-height:1.6;}
+
+  /* ---- Context ---- */
+  .context-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;}
+  .context-grid p{font-size:16.5px;color:#262C30;}
+  .facts{border-top:1px solid var(--line);}
+  .fact{
+    display:flex;justify-content:space-between;gap:16px;padding:13px 0;
+    border-bottom:1px solid var(--line);font-size:14.5px;
+  }
+  .fact-label{color:var(--slate);font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  .fact-value{font-weight:500;text-align:right;}
+
+  /* ---- Production callout ---- */
+  .prod-callout{
+    border:1px solid var(--line);background:var(--card);border-radius:var(--radius);
+    padding:20px 24px;margin-top:20px;
+  }
+  .prod-callout .label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:8px;
+  }
+  .prod-callout p{margin:0;font-size:15px;color:#2E3438;}
+
+  /* ---- Cascade diagram (dark panel) ---- */
+  .cascade-section{background:var(--basalt);color:#E7EAE7;}
+  .cascade-section .section-label{color:#E9CE8F;}
+  .cascade-section h2{color:#fff;}
+  .cascade-section .section-sub{color:#B7BFBA;}
+  .cascade{max-width:640px;margin:0 auto;position:relative;}
+  .layer{
+    border:1px solid var(--line-dark);background:var(--basalt-2);
+    border-radius:var(--radius);padding:16px 20px;margin-bottom:6px;text-align:center;
+  }
+  .layer.real{border-color:#3F5E78;background:#22303C;}
+  .layer.built{border-color:#5C4A2A;background:#2C2519;}
+  .layer.loop{border-color:var(--gold);background:#2C2519;}
+  .layer-title{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:#F2F4F1;
+  }
+  .layer-sub{font-size:12.5px;color:#9BA5A0;margin-top:4px;}
+  .layer-note{font-size:11.5px;color:#E9CE8F;margin-top:4px;font-style:italic;}
+  .arrow-down{text-align:center;color:#5A6560;font-size:16px;margin:2px 0;}
+  .cascade-legend{
+    display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:22px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9BA5A0;
+  }
+  .cascade-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .swatch{width:10px;height:10px;border-radius:2px;display:inline-block;}
+  .key-link{
+    margin-top:28px;border:1px solid var(--gold);background:#2C2519;border-radius:var(--radius);
+    padding:20px 24px;max-width:640px;margin-left:auto;margin-right:auto;
+  }
+  .key-link .label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    color:#E9CE8F;text-transform:uppercase;margin-bottom:8px;
+  }
+  .key-link p{margin:0 0 10px;font-size:14.5px;color:#D8DCD9;line-height:1.6;}
+  .key-link p:last-child{margin-bottom:0;}
+
+  /* ---- KRA table ---- */
+  .table-scroll{overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px;}
+  th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+    letter-spacing:.05em;text-transform:uppercase;color:var(--slate);
+    padding:10px 14px;border-bottom:1px solid var(--ink);
+  }
+  td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tbody tr.traced{background:var(--gold-tint);}
+  tbody tr:hover td{background:var(--card);}
+  tbody tr.traced:hover td{background:var(--gold-tint);}
+  .traced-tag{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;padding:2px 7px;
+    border-radius:10px;background:var(--gold);color:#fff;margin-left:8px;white-space:nowrap;
+  }
+  .table-note{margin-top:18px;font-size:13.5px;color:var(--slate);max-width:72ch;}
+
+  /* ---- Figure frame ---- */
+  .fig-frame{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:14px;}
+  .fig-frame img{border:1px solid var(--line);}
+  .fig-frame a{display:block;}
+  .fig-hint{display:none;}
+  @media (max-width:860px){.fig-hint{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);margin-top:10px;}}
+  .fig-caption{
+    display:flex;justify-content:space-between;gap:20px;margin-top:12px;
+    font-size:13px;color:var(--slate);font-family:'IBM Plex Mono',monospace;flex-wrap:wrap;
+  }
+  .fig-intro{font-size:15.5px;color:#262C30;margin-bottom:16px;line-height:1.6;}
+
+  /* ---- Loop cards ---- */
+  .parts{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .part{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:24px;}
+  .part-tag{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:10px;
+  }
+  .part h3{font-size:18px;margin-bottom:10px;}
+  .part p{font-size:14.5px;color:#3A4147;margin:0;line-height:1.6;}
+
+  /* ---- Honesty section ---- */
+  .honesty-examples{
+    border:1px solid var(--line);background:var(--card);border-radius:var(--radius);
+    padding:22px 24px;margin:20px 0;
+  }
+  .honesty-examples .ex{padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:#2E3438;line-height:1.6;}
+  .honesty-examples .ex:last-child{border-bottom:none;padding-bottom:0;}
+  .honesty-examples .ex:first-child{padding-top:0;}
+
+  /* ---- Disclaimer detail ---- */
+  details{border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;background:var(--card);}
+  summary{
+    cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:13px;
+    letter-spacing:.03em;color:var(--ink);font-weight:500;
+  }
+  details p{font-size:14px;color:#3A4147;margin:14px 0 0;line-height:1.65;}
+
+  /* ---- CTA ---- */
+  .cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center;padding:40px 0 64px;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;letter-spacing:.02em;
+    padding:14px 24px;border-radius:2px;text-decoration:none;display:inline-block;
+  }
+  .btn-primary{background:var(--gold);color:#fff;}
+  .btn-secondary{border:1px solid var(--ink);color:var(--ink);}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--slate);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+  @media (max-width:860px){
+    .wrap{padding:0 20px;}
+    .ribbon{padding:9px 20px;}
+    h1{font-size:30px;max-width:none;}
+    .context-grid{grid-template-columns:1fr;gap:32px;}
+    .kpi-strip{grid-template-columns:repeat(2,1fr);}
+    .kpi{border-bottom:1px solid var(--line);}
+    .kpi:nth-child(2){border-right:none;}
+    .kpi:nth-child(4){border-right:none;}
+    .parts{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">ILLUSTRATIVE DATA — GDC and its organizational structure are real; this reporting system is real and in production. Figures shown are illustrative. <b>Full disclaimer below.</b></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Eric Kizambo Kachila</a>
+    <span class="doc-tag">PORTFOLIO DOCUMENT 03 / ORGANIZATIONAL M&E SYSTEMS</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">PORTFOLIO · A SYSTEM BUILT AND RUN IN PRODUCTION</div>
+    <h1>The Reporting System Behind a 25-Department Corporate Workplan</h1>
+    <p class="subhead">From GDC's Strategic Plan to a department's monthly update, and back. A decomposition method, a dependency framework, and a consolidation tool I designed and now run every month, traced here through one real activity across all six layers of the cascade.</p>
+
+    <div class="financing-row">
+      <span class="chip strong">Built &amp; run in production</span>
+      <span class="chip">25 departments, 8 directorates</span>
+      <span class="chip">6-layer cascade</span>
+      <span class="chip">Dependency framework</span>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi">
+        <div class="kpi-label">Departments consolidated</div>
+        <div class="kpi-value">25</div>
+        <div class="kpi-status">across 8 directorates</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Traced activity, GRA</div>
+        <div class="kpi-value">67%</div>
+        <div class="kpi-status">2 of 3 surveys complete</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Corporate dependencies</div>
+        <div class="kpi-value">1</div>
+        <div class="kpi-status">flagged overdue</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Cascade layers</div>
+        <div class="kpi-value">6</div>
+        <div class="kpi-status">strategy to tracker, and back</div>
+      </div>
+    </div>
+    <div class="dataset-note">GDC and its structure are real. Every figure above is illustrative, standing in for internal reporting data.</div>
+  </div>
+</section>
+
+<section class="context">
+  <div class="wrap context-grid">
+    <div>
+      <div class="section-label">The problem</div>
+      <p>GDC's corporate workplan is approved once a year. Then it has to survive twenty-five departments, each filling in its own share of it and reporting monthly, for a full financial year. Most organisational M&E systems succeed or fail in the space between a plan existing on paper and a plan actually being tracked, department by department, without the numbers quietly drifting apart.</p>
+      <p>This page describes the system I built to close that gap: a decomposition method that turns a corporate-level target into a specific department's activity, a dependency framework that names what a department is actually waiting on before a target can be hit, and a consolidation tool that rolls twenty-five departments' monthly updates into one corporate picture, so a department's own numbers and the corporate view always match.</p>
+      <div class="prod-callout">
+        <div class="label">Why one activity, not a summary of all 25</div>
+        <p>What follows traces one real activity, illustrative figures throughout, from GDC's actual Strategic Plan down to a department's monthly update, and back up into the corporate dashboard. The same mechanism runs across all twenty-five departments. Following a single activity keeps the connections concrete rather than abstract.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="fact-label">ROLE</span><span class="fact-value">Head, Corporate Planning &amp; Performance Management</span></div>
+      <div class="fact"><span class="fact-label">ORGANIZATION</span><span class="fact-value">Geothermal Development Company (GDC)</span></div>
+      <div class="fact"><span class="fact-label">SCOPE</span><span class="fact-value">25 departments, 8 directorates</span></div>
+      <div class="fact"><span class="fact-label">MY ROLE IN THIS SYSTEM</span><span class="fact-value">Designed the decomposition method, the dependency framework, and the consolidation tool; run the monthly and quarterly cycle</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cascade-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">The complete cascade</div>
+      <h2>Six layers, and it closes into a loop</h2>
+      <p class="section-sub">Most organisational M&amp;E diagrams show a straight line from strategy down to activity. This one closes back on itself, at year end and every time a dependency is logged.</p>
+    </div>
+
+    <div class="cascade">
+      <div class="layer real">
+        <div class="layer-title">GDC 2023–2027 Strategic Plan</div>
+        <div class="layer-sub">4 Key Result Areas — Resource Development, Financial Sustainability, Stakeholder Management, Org. Capacity</div>
+        <div class="layer-note">Real document, reviewed as-is</div>
+      </div>
+      <div class="arrow-down">↓</div>
+
+      <div class="layer built">
+        <div class="layer-title">Strategy → Key Activity → Output → Indicator → 5-Year Target</div>
+        <div class="layer-sub">Sliced into annual targets, each assigned to a named responsible department</div>
+      </div>
+      <div class="arrow-down">↓</div>
+
+      <div class="layer built">
+        <div class="layer-title">Corporate Annual Workplan, by directorate</div>
+        <div class="layer-sub">210 activities, 9 directorates, budget reconciled before departments see their share</div>
+      </div>
+      <div class="arrow-down">↓</div>
+
+      <div class="layer built">
+        <div class="layer-title">Departmental Decomposition — Working Template</div>
+        <div class="layer-sub">25 departments · measure type · dependency framework</div>
+      </div>
+      <div class="arrow-down">↓</div>
+
+      <div class="layer built">
+        <div class="layer-title">Monthly Implementation &amp; Dependency Report</div>
+        <div class="layer-sub">Section B activity progress · Section C dependency status</div>
+      </div>
+      <div class="arrow-down">↓</div>
+
+      <div class="layer built">
+        <div class="layer-title">Corporate Workplan Tracker</div>
+        <div class="layer-sub">Dashboard · Corporate Activity Register · Corporate Dependency Register, all 25 departments</div>
+      </div>
+      <div class="arrow-down">↓</div>
+
+      <div class="layer loop">
+        <div class="layer-title">Year-End Roll-Up → Next Year's Strategic Plan Review</div>
+        <div class="layer-sub">Closes the loop — the same kind of document reviewed at the top</div>
+      </div>
+    </div>
+
+    <div class="cascade-legend">
+      <span><span class="swatch" style="background:#3F5E78;"></span>Real document</span>
+      <span><span class="swatch" style="background:#7A6435;"></span>System I built and run</span>
+      <span><span class="swatch" style="background:#E9CE8F;"></span>Where the loop closes</span>
+    </div>
+
+    <div class="key-link">
+      <div class="label">The connection this whole system is built around</div>
+      <p>GDC's own Strategic Plan reporting already includes a standardized taxonomy of why targets are missed, and "Dependency on External Stakeholders" is one of its named categories.</p>
+      <p>The dependency framework in this system exists to catch exactly that failure mode at the activity level, months before it could ever surface as a missed KRA target.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kras">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Where it starts</div>
+      <h2>GDC's four Key Result Areas</h2>
+      <p class="section-sub">These are GDC's real KRAs. The strategies, activities, and figures below are illustrative. KRA 1's surface exploration survey is the activity traced through every layer that follows.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>KRA</th>
+            <th>Key activity</th>
+            <th>Output indicator</th>
+            <th>5-yr / Y3 target</th>
+            <th>Actual</th>
+            <th>Lead dept.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="traced">
+            <td>1 — Geothermal Resource Development<span class="traced-tag">TRACED BELOW</span></td>
+            <td>Surface exploration surveys, Field A</td>
+            <td>Surveys completed</td>
+            <td>12 / 3</td>
+            <td>2</td>
+            <td>Geothermal Resource Assessment</td>
+          </tr>
+          <tr>
+            <td>2 — Financial Sustainability</td>
+            <td>Negotiate long-term power purchase agreements</td>
+            <td>PPAs signed</td>
+            <td>4 / 1</td>
+            <td>1</td>
+            <td>Finance &amp; Investment</td>
+          </tr>
+          <tr>
+            <td>3 — Stakeholder Management</td>
+            <td>Quarterly liaison meetings, project-affected areas</td>
+            <td>Meetings held</td>
+            <td>20 / 4</td>
+            <td>3</td>
+            <td>Community Relations</td>
+          </tr>
+          <tr>
+            <td>4 — Organizational Capacity</td>
+            <td>Corporate technical training programme</td>
+            <td>Staff completing training</td>
+            <td>500 / 100</td>
+            <td>62</td>
+            <td>Human Resource Management</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">A five-year target doesn't tell anyone what to do this year. Three surveys, due this year, assigned to Geothermal Resource Assessment, is the number that becomes a line in the Corporate Annual Workplan below.</p>
+  </div>
+</section>
+
+<section class="working-template">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Departmental decomposition</div>
+      <h2>GRA's Working Template — the actual row, in context</h2>
+    </div>
+    <p class="fig-intro">At department level, "three surveys" becomes a real, trackable activity, the kind every department fills in for itself once a year. Every activity carries a measure type and a unit that matches what's actually being counted. Where a genuine dependency exists, it carries a named counterpart and a real date. Here's A-04 sitting among GRA's other illustrative activities, so the connection to a real, populated departmental workplan is something you can actually see.</p>
+    <div class="fig-frame">
+      <a href="assets/wt-working-template.jpg" target="_blank" rel="noopener"><img src="assets/wt-working-template.jpg" alt="GRA departmental workplan for FY2025/2026, showing activity A-04, surface exploration surveys at Field A, with a dependency on Community Relations required by 31 March."></a>
+      <div class="fig-caption">
+        <span>GRA WORKING TEMPLATE · ACTIVITY A-04</span>
+        <span>ILLUSTRATIVE DATA</span>
+      </div>
+      <div class="fig-hint">Tap the image to open it full size</div>
+    </div>
+    <p class="table-note">That last row is the one that matters. GRA can't put a survey team on the ground until Community Relations has cleared access with the community living on that land, a genuine operational dependency, and exactly the kind of thing that's easy to leave unspoken until it's already cost you time.</p>
+  </div>
+</section>
+
+<section class="monthly-report">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Monthly reporting</div>
+      <h2>Every month, GRA reports achievement and dependency status together</h2>
+    </div>
+    <p class="fig-intro">Two of three surveys got done. The third didn't, because the community access agreement for that site was still outstanding. The reason sits right there in the report, dated, named, and traceable the whole way back to the KRA it affects. Section B tracks activity progress; Section C tracks dependency status, both shown with GRA's other illustrative activities around them.</p>
+    <div class="fig-frame">
+      <a href="assets/wt-monthly-report.jpg" target="_blank" rel="noopener"><img src="assets/wt-monthly-report.jpg" alt="GRA Monthly Implementation Report for March, Year 3, showing activity A-04 at 67% achievement, behind schedule, and its Community Relations dependency marked Outstanding."></a>
+      <div class="fig-caption">
+        <span>MONTHLY IMPLEMENTATION REPORT · SECTIONS B &amp; C</span>
+        <span>ILLUSTRATIVE DATA</span>
+      </div>
+      <div class="fig-hint">Tap the image to open it full size</div>
+    </div>
+  </div>
+</section>
+
+<section class="dependency-register">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Rolling up</div>
+      <h2>The same figures, sitting next to every other department</h2>
+    </div>
+    <p class="fig-intro">That report stays with GRA, but the same figures also get copied into the Corporate Activity Register and Corporate Dependency Register, alongside the other twenty-four departments' updates. Nobody retypes anything at this stage. GRA's own numbers simply sit next to everyone else's. The "OVERDUE" flag isn't set manually by anyone, it fires on its own, the moment the required date passes with the agreement still outstanding.</p>
+    <div class="fig-frame">
+      <a href="assets/wt-dependency-register.jpg" target="_blank" rel="noopener"><img src="assets/wt-dependency-register.jpg" alt="Corporate Dependency Register showing GRA's overdue dependency on Community Relations, alongside three other departments' dependencies."></a>
+      <div class="fig-caption">
+        <span>CORPORATE DEPENDENCY REGISTER</span>
+        <span>ILLUSTRATIVE DATA</span>
+      </div>
+      <div class="fig-hint">Tap the image to open it full size</div>
+    </div>
+  </div>
+</section>
+
+<section class="tracker-dashboard">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">The corporate workplan tracker</div>
+      <h2>What the Dashboard shows, without anyone touching it</h2>
+    </div>
+    <p class="fig-intro">Nobody updates the Dashboard directly. It reads off the two registers above and shows the position as it stands: GRA's 67% achievement in red, one dependency outstanding, one of them overdue. The picture is identical whether you're looking at GRA's own file or the corporate summary, because both are reading the same underlying numbers.</p>
+    <div class="fig-frame">
+      <a href="assets/wt-dashboard.jpg" target="_blank" rel="noopener"><img src="assets/wt-dashboard.jpg" alt="Corporate Workplan Tracker Dashboard showing five departments' achievement rates, with GRA at 67% in red and one overdue dependency."></a>
+      <div class="fig-caption">
+        <span>CORPORATE WORKPLAN TRACKER · DASHBOARD</span>
+        <span>ILLUSTRATIVE DATA</span>
+      </div>
+      <div class="fig-hint">Tap the image to open it full size</div>
+    </div>
+    <p class="table-note">This dashboard is a separate thing from the Tableau dashboard elsewhere on this site. That one demonstrates Tableau specifically; this one is an Excel-based tool that belongs to this system.</p>
+  </div>
+</section>
+
+<section class="loop-explainer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Why this is a loop</div>
+      <h2>Not a one-way cascade</h2>
+    </div>
+    <div class="parts">
+      <div class="part">
+        <div class="part-tag">The annual loop</div>
+        <h3>Year-end feeds next year's plan</h3>
+        <p>The Tracker's year-end consolidated position, achievement against every department's targets rolled up corporately, becomes the raw material for the next Strategic Plan Implementation Status Report. The document reviewed to build this system, one year earlier, was itself an output of this same cycle.</p>
+      </div>
+      <div class="part">
+        <div class="part-tag">The dependency loop</div>
+        <h3>The bottom feeds the top with evidence</h3>
+        <p>The bottom of the cascade feeds the top with more than achievement numbers. It supplies the specific evidence that would justify a non-achievement classification, if one is ever needed: a named counterpart, a real date, a status that updates every month. An unexplained gap in a strategic report becomes a traceable, dated dependency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="honesty">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Keeping it honest, not just designed</div>
+      <h2>The less visible half of running this at scale</h2>
+      <p class="section-sub">Building the cascade was the design work. Keeping it accurate, once twenty-five departments were actively editing their own files, turned out to be the harder and less visible part of the job. Departmental files are living documents: rows get deleted to tidy up a template, activities get reordered, a column gets typed over. Each looks harmless alone. In a workbook where one sheet's formulas reference another by exact row position, any one of them can quietly break the link between a department's Dependency Register and the activity it's actually describing, with no visible error.</p>
+    </div>
+    <div class="honesty-examples">
+      <div class="ex">A formula that referenced a since-deleted row didn't fail loudly. It displayed a plausible result by coincidence, while the specific check it was supposed to perform simply wasn't running.</div>
+      <div class="ex">A dependency register that reported zero errors was, on closer inspection, describing the wrong activity on more than half its rows. The visible error count was a small fraction of the real problem.</div>
+      <div class="ex">A cell that looked blank on screen sometimes wasn't. A stray invisible character was enough to make a validation check misfire, silently, for months.</div>
+    </div>
+    <p class="section-sub">Catching this reliably took three specific habits: checking every cross-reference against its actual source, row by row; rebuilding broken linkages from first principles; and treating every fix as unverified until it had been re-checked against real data. A clean error count wasn't enough on its own to trust. Six months into the reporting cycle, a director needs the numbers on screen to still mean what they're supposed to mean, and that takes more than good indicator design.</p>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">What this demonstrates</div>
+      <h2>Two skills, rarely shown together</h2>
+      <p class="section-sub">One department's one activity is the example running through this page. The same mechanism runs across all twenty-five departments, every month, all year: the same registers, the same dependency logic, the same dashboard reading off the same numbers everyone else already typed in. Designing the cascade is a results-framework skill. Keeping twenty-five independently-edited files honest, month after month, calls on something closer to data quality assurance. The two are rarely demonstrated together in the same piece of work.</p>
+    </div>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <div class="wrap">
+    <details>
+      <summary>Full disclaimer and data provenance</summary>
+      <p>GDC and its organizational structure (the 25 departments, the 8 directorates, the four Key Result Areas) are real. Every strategy, activity, target, and figure shown on this page is illustrative, constructed to demonstrate how the system functions, not to disclose GDC's actual strategic performance or internal financial data.</p>
+      <p>This page has not been reviewed or endorsed by GDC. It is a personal portfolio artefact describing a system I designed and operate in my role there, not an official GDC publication. Any use beyond personal portfolio purposes should be confirmed with GDC first.</p>
+      <p>The underlying system, the decomposition method, the dependency framework, the consolidation tool, and the data-integrity discipline described here, is original work, genuinely designed and run in production. The specific figures shown stand in for GDC's actual reporting data, which is internal.</p>
+    </details>
+  </div>
+</section>
+
+<div class="wrap cta">
+  <a class="btn btn-primary" href="documents/GDC_Reporting_System_Portfolio_Document.pdf">Read the full document (PDF)</a>
+  <a class="btn btn-secondary" href="index.html">Back to portfolio</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Eric Kizambo Kachila · Nairobi, Kenya</span>
+    <span><a href="mailto:kizambocrick@gmail.com">kizambocrick@gmail.com</a> · <a href="https://www.linkedin.com/in/kizambo-kachila">LinkedIn</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b28debde3da4466b9181ecb36b66bbb3"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

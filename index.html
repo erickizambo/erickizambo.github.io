@@ -36,7 +36,7 @@
     font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;letter-spacing:-0.01em;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;margin:0;letter-spacing:-0.01em;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
@@ -132,12 +132,14 @@
     transition:border-color .15s ease;
   }
   .doc-card.alt{border-top-color:var(--teal);}
+  .doc-card.system{border-top-color:var(--gold);}
   .doc-card:hover{border-color:var(--ink);}
   .doc-eyebrow{
     font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;
     color:var(--ember);text-transform:uppercase;
   }
   .doc-card.alt .doc-eyebrow{color:var(--teal);}
+  .doc-card.system .doc-eyebrow{color:var(--gold);}
   .doc-card h3{font-size:20px;line-height:1.25;}
   .doc-card p{font-size:14.5px;color:#3A4147;margin:0;line-height:1.6;}
   .doc-facts{
@@ -149,7 +151,17 @@
     margin-top:auto;padding-top:4px;
   }
   .doc-card.alt .doc-cta{color:var(--teal);}
-  .doc-card:not(.alt) .doc-cta{color:var(--ember);}
+  .doc-card.system .doc-cta{color:var(--gold);}
+  .doc-card:not(.alt):not(.system) .doc-cta{color:var(--ember);}
+
+  .track-divider{
+    display:flex;align-items:center;gap:16px;margin:36px 0 26px;
+  }
+  .track-divider .line{flex:1;height:1px;background:var(--line);}
+  .track-divider span{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.07em;
+    color:var(--slate);text-transform:uppercase;white-space:nowrap;
+  }
 
   /* ---- Dashboard ---- */
   .tableau-frame{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:14px;}
@@ -197,7 +209,7 @@
     <div>
       <div class="eyebrow">Nairobi, Kenya · Senior M&amp;E Professional</div>
       <h1>Strategic Planning, M&amp;E &amp; Data Analytics Leader</h1>
-      <p class="subhead">I head corporate performance measurement at Kenya's state geothermal utility, where I designed the M&amp;E system for a KfW and GRMF financed 100MW steam field from the ground up. This site holds two portfolio pieces built to that same standard, an M&amp;E system design and a full impact evaluation design, plus the tools behind them.</p>
+      <p class="subhead">I head corporate performance measurement at Kenya's state geothermal utility, where I designed the M&amp;E system for a KfW and GRMF financed 100MW steam field from the ground up. This site holds three pieces built to that same standard: two systems I designed and still run, plus an impact evaluation design methodology.</p>
       <div class="contact-row">
         <span class="chip strong">Nairobi, Kenya</span>
         <a class="chip" href="mailto:kizambocrick@gmail.com">kizambocrick@gmail.com</a>
@@ -273,14 +285,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="section-label">Portfolio</div>
-      <h2>Two design documents</h2>
-      <p class="section-sub">Both are illustrative portfolio pieces built around a real project geography, not client deliverables. Each states plainly, on the page, where real data ends and simulated figures begin.</p>
+      <h2>Three pieces of work</h2>
+      <p class="section-sub">Two of these are systems I designed and still run inside GDC. The third is a methodology exercise, illustrative data throughout, built to demonstrate impact evaluation design. Each page states plainly which is which.</p>
     </div>
     <div class="doc-cards">
       <a class="doc-card" href="me-system.html">
         <div class="doc-eyebrow">Portfolio Document 01</div>
         <h3>M&amp;E System Design — Paka-Baringo Silali</h3>
-        <p>The results system I designed for a 100MW geothermal steam field: a Theory of Change across four pathways, a 19-indicator results framework, four data collection tools, and a working monitoring dashboard.</p>
+        <p>The results system I designed and still monitor for a 100MW geothermal steam field: a Theory of Change across four pathways, a 19-indicator results framework, four data collection tools, and a working monitoring dashboard.</p>
         <div class="doc-facts">19 INDICATORS · 4 TOOLS · KFW &amp; GRMF FINANCED</div>
         <div class="doc-cta">Open the design →</div>
       </a>
@@ -288,8 +300,18 @@
         <div class="doc-eyebrow">Portfolio Document 02</div>
         <h3>Impact Evaluation Design — BSCHAP</h3>
         <p>A quasi-experimental design for a CSR-funded health programme where randomising access was never ethically viable. Five identification strategies assessed, one recommended, built with a full mixed-methods strand.</p>
-        <div class="doc-facts">PSM-DiD · MIXED METHODS · 38-MONTH DESIGN</div>
+        <div class="doc-facts">PSM-DiD · MIXED METHODS · METHODOLOGY DEMONSTRATION</div>
         <div class="doc-cta">Open the design →</div>
+      </a>
+    </div>
+
+    <div class="doc-cards" style="grid-template-columns:1fr;margin-top:22px;">
+      <a class="doc-card system" href="workplan-tracker.html">
+        <div class="doc-eyebrow">Portfolio Document 03</div>
+        <h3>The Reporting System Behind a 25-Department Corporate Workplan</h3>
+        <p>From GDC's Strategic Plan to a department's monthly update, and back. A decomposition method, a dependency framework, and a consolidation tool I designed and still run every month, traced through one real activity across all six layers of the cascade.</p>
+        <div class="doc-facts">25 DEPARTMENTS · 8 DIRECTORATES · 6-LAYER CASCADE · RUN MONTHLY</div>
+        <div class="doc-cta">Open the system →</div>
       </a>
     </div>
   </div>
