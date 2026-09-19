@@ -112,6 +112,35 @@
     font-size:13px;color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal-tint);
   }
   .tag-block{border-top:1px solid var(--line);padding-top:18px;}
+  /* ---- Capabilities ---- */
+  .caps{border-top:1px solid var(--line);}
+  .cap{
+    display:grid;grid-template-columns:220px 1fr;gap:28px;
+    padding:20px 0;border-bottom:1px solid var(--line);align-items:start;
+  }
+  .cap-name{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.05em;
+    text-transform:uppercase;font-weight:600;color:var(--ink);padding-top:3px;
+  }
+  .cap-body{font-size:15.5px;color:#2E3438;line-height:1.55;}
+  .cap-evidence{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--teal);
+    text-decoration:none;border-bottom:1px solid var(--teal-tint);white-space:nowrap;
+  }
+  @media (max-width:860px){
+    .cap{grid-template-columns:1fr;gap:8px;padding:18px 0;}
+  }
+
+  /* ---- Contact CTA ---- */
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;letter-spacing:.02em;
+    padding:14px 24px;border-radius:2px;text-decoration:none;display:inline-block;
+  }
+  .btn-primary{background:var(--ember);color:#fff;}
+  .btn-secondary{border:1px solid var(--ink);color:var(--ink);}
+  .cta-line{font-size:16.5px;color:#2E3438;max-width:68ch;line-height:1.6;margin:0 0 26px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+
   .tag-block-label{
     font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
     color:var(--slate);text-transform:uppercase;margin-bottom:12px;
@@ -267,8 +296,9 @@
     </div>
     <div class="about-grid">
       <div>
-        <p>I'm Senior Statistician and functional Head of the Corporate Performance Management Division at the Geothermal Development Company (GDC), a Kenyan state corporation under the Ministry of Energy. I've been with GDC since 2010 and in this role since 2015. I run the corporate performance management cycle, cascading the strategic plan into departmental targets and tracking implementation monthly across 25 departments, the second piece in the portfolio below. I also designed and run the M&amp;E systems for three flagship geothermal projects, Menengai, Baringo-Silali, and Suswa, monitoring implementation through quarterly field verification visits to each site.</p>
-        <p>Of the three, the Baringo-Silali system, covering the project's Paka component, is the one I've put in the portfolio below: a results framework and indicator matrix, the data collection tools and flow protocols that feed them, the reporting templates they roll up into, and the QA procedures that keep the numbers trustworthy. AFD, KfW, EIB, AfDB, USAID, JICA and GRMF have been development partners for the three geothermal projects, and the systems I designed provide the data that goes into their reports. I'm proficient in Python, R, Stata, Power BI, Tableau, DHIS2, Kobo Toolbox and SQL, and I'm a native Kiswahili speaker, fluent in English.</p>
+        <p>I'm Senior Statistician and functional Head of the Corporate Performance Management Division at the Geothermal Development Company (GDC), a Kenyan state corporation under the Ministry of Energy. I've been with GDC since 2010 and have led this function since 2015, supervising a team of ten across the Nairobi and Nakuru offices. I provide technical guidance to analysts and departmental focal persons on indicators, monitoring tools, data quality and reporting, and I run the performance review forums with departmental heads, directorate heads and the executive.</p>
+        <p>I run the corporate performance management cycle, cascading the strategic plan into departmental targets and tracking implementation monthly across 25 departments, the second piece in the portfolio below. I also designed and run the M&amp;E systems for three flagship geothermal projects, Menengai, Baringo-Silali, and Suswa, monitoring implementation through quarterly field verification visits to each site.</p>
+        <p>Of the three, the Baringo-Silali system, covering the project's Paka component, is the one I've put in the portfolio below: a results framework and indicator matrix, the data collection tools and flow protocols that feed them, the reporting templates they roll up into, and the QA procedures that keep the numbers trustworthy. AFD, KfW, EIB, AfDB, USAID, JICA and GRMF have been development partners for the three geothermal projects, and the systems I designed provide the data that goes into their reports. I'm proficient in Excel, Google Sheets, Python, R, SPSS, Tableau and Power BI, and I have working knowledge of KoboToolbox and DHIS2. I'm a native Kiswahili speaker, fluent in English.</p>
         <a class="cv-link" href="https://www.linkedin.com/in/kizambo-kachila" target="_blank" rel="noopener">Full career history is on LinkedIn →</a>
       </div>
       <div>
@@ -278,13 +308,51 @@
             <span class="tag">AFD</span><span class="tag">KfW</span><span class="tag">EIB</span>
             <span class="tag">AfDB</span><span class="tag">USAID</span><span class="tag">JICA</span><span class="tag">GRMF</span>
           </div>
-          <div class="tag-block-label">Technical toolkit</div>
+          <div class="tag-block-label">Analysis</div>
           <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">R</span><span class="tag">Stata</span><span class="tag">SPSS</span>
-            <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">DHIS2</span>
-            <span class="tag">Kobo Toolbox</span><span class="tag">ODK</span><span class="tag">SQL</span>
+            <span class="tag">Excel</span><span class="tag">Google Sheets</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">SPSS</span>
+          </div>
+          <div class="tag-block-label">Visualisation &amp; reporting</div>
+          <div class="tag-row">
+            <span class="tag">Tableau</span><span class="tag">Power BI</span>
+          </div>
+          <div class="tag-block-label">Working knowledge</div>
+          <div class="tag-row">
+            <span class="tag">KoboToolbox</span><span class="tag">DHIS2</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Capability</div>
+      <h2>What I bring</h2>
+      <p class="section-sub">Each of these is demonstrated in the work below.</p>
+    </div>
+    <div class="caps">
+      <div class="cap">
+        <div class="cap-name">M&amp;E system design</div>
+        <div class="cap-body">Theory of change across four pathways, a 19-indicator results framework spanning five result levels, data collection tools, flow protocols and QA procedures. <a class="cap-evidence" href="me-system.html">Document 01 →</a></div>
+      </div>
+      <div class="cap">
+        <div class="cap-name">Results-based management</div>
+        <div class="cap-body">Results chains running from inputs through outputs to outcomes and impact, with impact framed as contribution rather than attribution. Strategy cascaded into departmental targets with named accountability and monthly measurement. <a class="cap-evidence" href="me-system.html">Document 01 →</a> &nbsp;·&nbsp; <a class="cap-evidence" href="workplan-tracker.html">Document 02 →</a></div>
+      </div>
+      <div class="cap">
+        <div class="cap-name">Data quality assurance</div>
+        <div class="cap-body">Twenty-five independently maintained files reconciled into one consistent corporate position, every month. <a class="cap-evidence" href="workplan-tracker.html">Document 02 →</a></div>
+      </div>
+      <div class="cap">
+        <div class="cap-name">Evaluation design</div>
+        <div class="cap-body">Identification strategy assessed against five alternatives, propensity score matching with difference-in-differences, and a full mixed-methods strand. <a class="cap-evidence" href="impact-evaluation.html">Document 03 →</a></div>
+      </div>
+      <div class="cap">
+        <div class="cap-name">Leadership</div>
+        <div class="cap-body">A team of ten across two offices, technical guidance to analysts and departmental focal persons, and performance review forums with departmental heads, directorate heads and the executive.</div>
       </div>
     </div>
   </div>
@@ -343,7 +411,21 @@
   </div>
 </section>
 
-<footer id="contact">
+<section class="contact-cta" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Contact</div>
+      <h2>Get in touch</h2>
+    </div>
+    <p class="cta-line">I work on monitoring, evaluation and learning: results frameworks, evaluation design, and the systems that turn strategy into measured results. If you're hiring for that work, or just want to talk about it, email is the fastest way to reach me.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:kizambocrick@gmail.com">Email me</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/kizambo-kachila" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
   <div class="wrap">
     <span>Eric Kizambo Kachila · Nairobi, Kenya</span>
     <span>
