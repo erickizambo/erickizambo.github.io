@@ -227,6 +227,35 @@
     .doc-cards{grid-template-columns:1fr;}
     .tableau-frame iframe{height:520px;}
   }
+
+  /* ---- Results chain band ---- */
+  .chain-section{background:var(--basalt);color:#E7EAE7;}
+  .chain-section .section-label{color:#E8B98F;}
+  .chain-section h2{color:#fff;}
+  .chain-section .section-sub{color:#B7BFBA;}
+  .chain{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-bottom:22px;}
+  .link-box{
+    background:var(--basalt-2);border:1px solid var(--line-dark);border-radius:var(--radius);
+    padding:14px 13px;position:relative;
+  }
+  .link-lvl{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:#8FE0D2;margin-bottom:8px;line-height:1.3;
+  }
+  .link-eg{font-size:13.5px;line-height:1.4;color:#DEE2DE;}
+  .link-box:not(:last-child)::after{
+    content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);
+    color:#8A968F;font-size:15px;line-height:1;z-index:1;
+  }
+  .chain-note{
+    padding-top:20px;border-top:1px solid var(--line-dark);
+    font-size:14.5px;color:#AEB6B0;max-width:74ch;line-height:1.6;
+  }
+  .chain-note a{color:#E8B98F;text-decoration:none;border-bottom:1px solid #6B4A33;}
+  @media(max-width:860px){
+    .chain{grid-template-columns:1fr 1fr;gap:12px;}
+    .link-box:not(:last-child)::after{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -355,6 +384,25 @@
         <div class="cap-body">A team of ten across two offices, technical guidance to analysts and departmental focal persons, and performance review forums with departmental heads, directorate heads and the executive.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="chain-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Results Chain</div>
+      <h2>What the work actually looks like</h2>
+      <p class="section-sub">The theory of change behind the 100MW Paka steam field, reduced to its spine. One real item at each level.</p>
+    </div>
+    <div class="chain">
+      <div class="link-box"><div class="link-lvl">Inputs</div><div class="link-eg">KfW loan, EUR 80 million</div></div>
+      <div class="link-box"><div class="link-lvl">Activities</div><div class="link-eg">Well drilling, 34 wells</div></div>
+      <div class="link-box"><div class="link-lvl">Outputs</div><div class="link-eg">100MW steam at wellhead</div></div>
+      <div class="link-box"><div class="link-lvl">Immediate outcomes</div><div class="link-eg">Steam supply agreement signed</div></div>
+      <div class="link-box"><div class="link-lvl">Intermediate outcomes</div><div class="link-eg">70 to 100MW commissioned</div></div>
+      <div class="link-box"><div class="link-lvl">Impact</div><div class="link-eg">394,200 tCO2e avoided a year</div></div>
+    </div>
+    <div class="chain-note">Four pathways run through that chain: energy cost, climate and emissions, energy security, and community welfare. Nine assumptions sit underneath it and are monitored monthly. The full diagram, the 19-indicator framework and the four data collection tools are in <a href="me-system.html">Document 01 →</a></div>
   </div>
 </section>
 
